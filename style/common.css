@@ -45,12 +45,12 @@ background:url("../images/common/set_bar.png") no-repeat 0 0; padding:10px 0 0 6
 .gnb_allMenu a {  display:block; width:65px; height:30px; 
 background:url("../images/common/set_bar.png") no-repeat 0 -100px; }
 
-.gnb_info { position:absolute; top:10px; right:145px; height:30px;}
+.gnb_info { position:absolute; top:10px; right:100px; height:30px;}
 .gnb_info .gnb_buttonDeco { display:inline-block; margin:3px 2px 0 0;}
 .gnb_info .gnb_buttonDeco a {display:inline-block; padding:0 5px; height:22px; border:1px solid #dbdbdb; color:#7a7a7a;  }
 .gnb_info .gnb_buttonDeco a strong {line-height:22px; font-weight:normal; }
 
-.gnb_btBanner { overflow:hidden; position:absolute; top:0; right:0; width:132px; height:50px; }
+.gnb_btBanner { overflow:hidden; position:absolute; top:0; right:-53px; width:132px; height:50px; }
 #gnb_btBanner_area { display:block; width:146px; height:50px; cursor:pointer;
 background:url("../images/common/set_bar.png") 0 -400px no-repeat; }
 .gnb_btBannerDeco { display:block; position:absolute; top:11px; left:10px; width:82px; height:32px; background:url('../images/common/set_bar.png') 0 -500px no-repeat; }
@@ -95,7 +95,7 @@ background:url("../images/common/bt_pcbang.png") 0 0 no-repeat; }
 
 #header { position:absolute; top:0; left:0; width:100%; height:90px;
 min-width:1000px; background:url("../images/common/bg_gnb_main.png"); z-index:100; }
-#header .nav { position:relative; width:1000px; height:100%; margin:0 auto; }
+#header .nav { position:relative; width:1080px; height:100%; margin:0 auto; }
 .logo { position:absolute; top:14px; left:10px;}
 .main_logo { display:block; width:169px; height:63px; text-indent:-5000px; 
 background:url("../images/common/bg_logo.png") no-repeat 0 0;}

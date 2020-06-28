@@ -5,6 +5,7 @@
 <title>TERA테라</title>
 <link rel="stylesheet" type="text/css" href="style/common.css" />
 <link rel="stylesheet" type="text/css" href="style/index.css" />
+
 <style type="text/css">
 
 </style>
@@ -45,7 +46,7 @@ $(document).ready(function(){
 			},function(){
 				$("#header").stop().animate({height:90},400);
 				$(".gnb_depth2").hide();
-			});
+			}); 
 			
 			var currentEl, nextEl;
 			currentEl = 0;
@@ -86,6 +87,7 @@ $(document).ready(function(){
 		});
 		*/
 		/* 소식 */
+		
 		var wordlist_auto;
 		var num = 0;
 		function wordlist(){
@@ -102,7 +104,141 @@ $(document).ready(function(){
 		});
 	
 
+		$(".tera_world div").hover(function(){
+			$(this).find("span").stop().animate({height:48,fontSize:16},200)
+		},function(){
+			$(this).find("span").stop().animate({height:38,fontSize:14},200)		
+		});
 		
+		/* 배너 */
+		$(".page_nav li").eq(0).css({"height":"80px","border-top":"1px solid #c69c7c"}).addClass("on");
+		var list_index = $(".page_nav li").index();
+		$(".page_nav li").hover(function(){
+			$(this).eq(list_index).stop().animate({height:80},400)
+			$(this).css("border-top","1px solid #c69c7c")
+			
+		},function(){
+			if ($(this).hasClass("on") == false )
+			{
+			$(this).eq(list_index).stop().animate({height:60},400)
+			$(this).css("border-top","0 none")
+				;
+			}
+			else
+			{
+				
+			}
+		});	
+		
+		var current = 0;
+		$(".page_nav li").click(function(e){
+			e.preventDefault();
+		$(this).css("border-top","1px solid #c69c7c");
+		$(this).stop().animate({height:80},400).addClass("on")
+		.siblings().removeClass("on").stop().animate({height:60},400).css("border","0 none");
+		
+
+		var bannerNum = $(this).index();
+	
+		$(".main_banner li").eq(current).stop().animate({left:"-100%"},700);
+		$(".main_banner li").eq(bannerNum).stop().css("left","100%").animate({left:0},700);
+			
+			current = bannerNum;
+		});
+		
+	var auto;
+	function bannrerauto(){
+	 auto = setInterval(function(){
+		var n = current + 1;
+		if (n > 4)
+		{
+		 n=0
+		}
+		$(".page_nav li").eq(n).click();
+	},3000);
+	}
+
+	//호출 
+	bannrerauto();
+	
+	$(".page_nav li").hover(function(){
+			clearInterval(auto);
+	},function(){
+		bannrerauto()
+	});
+	
+			/*
+		$(".page_nav li").click(function(e){
+				e.preventDefault();
+	
+		nextEl = $(this).index();
+		if (currentEl != nextEl)
+		{
+			if (nextEl > currentEl)
+				{
+				$(".main_banner li").eq(currentEl).stop().animate({left:"-100%"},600)		
+				$(".main_banner li").eq(nextEl).css("left","100%").stop().animate({left:"0"},600)
+				}
+				else
+				{
+				$(".main_bannerli").eq(currentEl).stop().animate({left:"100%"},600)		
+				$(".main_banner li").eq(nextEl).css("left","-100%").stop().animate({left:"0"},600)
+				}
+		}
+			currentEl = nextEl;
+
+		
+	});
+*/
+
+
+		
+
+
+
+
+
+		/* 퀵메뉴 */
+		var contTop = $(".nav").offset().top;
+		var contTop2 = $("#container").offset().top;
+		var quick_menu = $(".quick_menu").offset().top;
+		var inner_section = $(".inner_section1").offset().top;
+
+		$(window).scroll(function(){
+			var win_top =  $(this).scrollTop();
+			if (win_top > contTop )
+			{
+				$("#header").css({"position":"fixed","background":"#190d27"})
+				
+			}
+
+			if ( win_top < contTop2 )
+			{
+				$("#header").css({"position":"absolute","background":"rgba(0,0,0,0.5 )"})
+			}
+
+			if (win_top > quick_menu)
+			{
+				$(".quick_menu").css({"position":"fixed","left":"10%","top":"200px"})
+				
+			}
+			if (win_top < inner_section)
+			{
+				$(".quick_menu").css({"position":"absolute","left":"-150px","top":"0px"})
+				
+			}
+
+		});
+
+
+
+
+
+
+
+
+		
+
 			
 });
 
@@ -279,22 +415,17 @@ $(document).ready(function(){
 							
 						</div>	
 					</a>
-				</li>
-				<li class="list_m6">
-					<a href="">
-						<div class="event_wrap">
-							
-						</div>	
-					</a>
-				</li>
-				<li class="list_m7">
-					<a href="">
-						<div class="event_wrap">
-							
-						</div>	
-					</a>
-				</li>
+				</li>			
 			</ul>
+			<div class="page_nav">
+				<ul>
+					<li class="banner_list1"><a href="">토끼 꿀떡 상자 출시!</a></li>
+					<li class="banner_list2"><a href="">수호자 임무</a></li>
+					<li class="banner_list3"><a href="">할로윈 박스 출시</a></li>
+					<li class="banner_list4"><a href="">카이아 영웅무기</a></li>
+					<li class="banner_list5"><a href="">전장리더 정보 업데이트</a></li>		
+				</ul>
+			</div>
 		</div>
 	</div><!-- main_top end -->
 	<div class="content">
@@ -451,15 +582,146 @@ $(document).ready(function(){
 					<p>신입에게 주어지는<br />든든한 혜택을 확인하세요!</p>
 					<span class="new_up"></span>
 					<span class="link_btn"></span>
+					<a href="" class="go_area_link"></a>
 				</div>
 			</div><!-- firstGo_area end -->
-			<div class="side_area"></div>
-			<div class="login_area"></div><!-- login_area end -->
+			<div class="side_area">				
+				<span class="visual_char"></span>
+				<div class="txt_area">
+					<p>장비구조<br /><strong>전격개선!</strong></p>
+					<span>명품과 각성이 사라졌다!? 개선된 장비구조를 한 눈에!</span>		
+				</div>
+				<div class="go_link_btn">
+					<a href=""></a>
+				</div>
+				<a href=""></a>
+			</div><!-- side_area end  -->
+			<div class="login_area">
+			<form action="" method="post">			
+				<p>오늘은 어떤 흥미로운 플레이가 펼쳐질까?</p>
+			<fieldset>
+			<legend class="screen_out">로그인페이지 이동</legend>
+				<div class="btn_box">
+				<button type="button" class="login_btn">LOGIN</button>
+				<button type="button" class="one_login_btn">일회용 로그인</button>
+				</div><!-- btn_box end -->
+			</fieldset>
+			
+				<div class="login_txt_area">
+					<span class="id_find"><a href="">아이디찾기</a></span>
+					<span class="pw_find"><a href="">비밀번호 찾기</a></span>
+					<span class="join"><a href="">회원가입</a></span>
+				</div><!-- login_txt_area end -->
+				<fieldset>
+					<legend class="screen_out">보안</legend>
+					<div class="pos">
+						<input type="checkbox" id="chkKey" name="Nxkey" class="security screen_out" />
+						<label for="chkKey" class="security_label">키보드 보안</label>
+						<input type="checkbox" id="save_id" name="save_id" class="save_id screen_out" />
+						<label for="save_id" class="save_id_label">아이디 저장</label>
+					</div>
+				</fieldset>
+				</form>
+			</div><!-- login_area end -->
+				<div class="quick_menu">
+			<ul>
+				<li class="securitycenter"><a href=""></a></li>
+				<li class="pcbang"><a href=""></a></li>
+				<li class="online_faq"><a href=""></a></li>
+				<li class="facebook"><a href=""></a></li>
+			</ul>
+		</div>
 		</div><!-- inner_section1 end -->
-		<div></div>
+
+		<div class="inner_section2">
+			<h3>테라 세계관</h3>
+			<p>아르보레아의 땅들<br /><span>테라 세계관을 빠르게 확인하세요</span></p>
+			<div class="tera_world">
+				<div class="vellick">
+					<a href="">
+						<span class="vellick_txt">벨릭의 수레바퀴</span>
+					</a>
+				</div>
+				<div class="aremacia">
+				<a href="">
+						<span class="aremacia_txt">알레만시아의 코어</span>
+					</a>
+				</div>
+				<div class="kia">
+					<a href="">
+						<span class="kia_txt">카이아의 용광로</span>
+					</a>
+				</div>
+			</div>
+		</div><!-- inner_section2 end -->
+		<div class="inner_section3">
+			<h3>테라샵</h3>
+			<div class="tera_shop_area">
+				<div class="shop_box1">
+					<a href="">
+					<div class="product_visual"></div>
+					<div class="product_info">
+						<strong>코스튬</strong>
+						<p>카이아의 영웅 무기 박스</p>
+						<span class="coin">1,000</span>
+					</div>
+					</a>
+				</div>
+				<div class="shop_box2">
+						<a href="">
+					<div class="product_visual"></div>
+					<div class="product_info">
+						<strong>코스튬</strong>
+						<p>토끼 꿀떡 스탬프 상자</p>
+						<span class="coin">1,600</span>
+					</div>
+					</a>
+				</div>
+			</div>
+		</div><!-- inner_section3 end -->
+	
 	</div><!-- content end -->
 </div><!-- container end -->
-<div id="footer"></div><!-- footer end -->
+<div id="footer">
+	<div class="inner_footer">
+		<div class="notice_footer">
+			<ul class="notice">
+				<li><a href="">고객센터</a></li>
+				<li><a href="">계정도용신고</a></li>
+				<li><a href="">불량이용자신고</a></li>
+				<li><a href="">보안서비스</a></li>
+				<li><a href="">채팅로그조회</a></li>		
+			</ul>
+			<ul class="fansite">
+				<li><a href="">팬사이트</a></li>
+				<li><a href="">인벤</a></li>
+				<li><a href="">게임조선</a></li>
+				<li><a href="">TIG</a></li>
+				<li><a href="">게임메카</a></li>		
+			</ul>
+		</div><!-- notice_footer -->
+		<div class="inder_list">
+			<ul>
+			<li><a href="">회사소개</a></li>
+			<li><a href="">이용약관</a></li>
+			<li><a href=""><strong>개인정보처리방침</strong></a></li>
+			<li><a href="">청소년 보호 정책</a></li>
+			<li><a href="">운영정책</a></li>
+			<li><a href="">게임이용등급</a></li>
+			<li><a href="">장기미이용 계정 조회 및 복구</a></li>			
+			</ul>
+			<address>
+					(주)넥슨코리아 대표이사 박지원   주소 : 경기도 성남시 분당구 판교로 256번길 7   전화 : 1588-7701   팩스 : 0502-258-8322<br />
+					
+					E-Mail :contact-us@nexon.co.kr   사업자 등록번호 : 220-87-17483호   통신판매업 신고번호 : 제2013-경기성남-1659호
+					<a href="">사업자 정보 확인</a>					
+			</address>
+			<div class="company">
+				<a href=""></a>
+			</div>
+		</div>
+	</div><!-- inner_footer -->
+</div><!-- footer end -->
 </div><!-- wrap end -->
 </body>
 </html>
