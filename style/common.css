@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+/* reset */
+
+body, div, ul, ol, li, dl, dt, dd, h2, h3, h4, h5, h6, p, address, 
+table, th, td, caption, form, fieldset, legend, textarea, input, button { padding:0; margin:0;} 
+img, fieldset { border:0 none; font-family:"NanumGothic-Regular" }/* img :  IE 10이하*/
+h1, h2, h3, h4, h5, h6 { font-size:100%;}
+ul, ol, li {list-style:none;}
+address, em { font-style:normal; }
+
+/* base */
+
+body { font-size:12px;}
+
+a { text-decoration:none}
+
+a:hover { text-decoration:underline;}
+
+
+input, button { vertical-align:top;}
+
+
+button { cursor:pointer;}
+
+.screen_out { width:0; height:0; font-size:0; line-height:0; text-indent:-5000px; }
+
+@font-face{
+	font-family:"NanumGothic-Regular";
+	src:url("font/NanumGothic-Regular.eot")
+	src:url("font/NanumGothic-Regular.woff")
+}
+
+/* 화면에 크기와 관련된 디자인은 가리고 음성브라우저가 읽기 가능 */
+
+/* nexon gnb */
+
+#gnb_wrap { position:relative; width:100%; min-width:1000px; height:50px;}
+.gnb_bar { position:relative; width:1000px; margin:0 auto; height:50px;}
+.gnb_bar .gnb_logo {position:absolute; top:0; left:-73px; width:217px; height:40px;
+background:url("../images/common/set_bar.png") no-repeat 0 0; padding:10px 0 0 63px; margin:0; }
+.gnb_logo a { display:block; width:105px; height:30px; }
+
+.gnb_allMenu {position:absolute; top:10px; left:124px; width:65px; height:30px;}
+.gnb_allMenu a {  display:block; width:65px; height:30px; 
+background:url("../images/common/set_bar.png") no-repeat 0 -100px; }
+
+.gnb_info { position:absolute; top:10px; right:145px; height:30px;}
+.gnb_info .gnb_buttonDeco { display:inline-block; margin:3px 2px 0 0;}
+.gnb_info .gnb_buttonDeco a {display:inline-block; padding:0 5px; height:22px; border:1px solid #dbdbdb; color:#7a7a7a;  }
+.gnb_info .gnb_buttonDeco a strong {line-height:22px; font-weight:normal; }
+
+.gnb_btBanner { overflow:hidden; position:absolute; top:0; right:0; width:132px; height:50px; }
+#gnb_btBanner_area { display:block; width:146px; height:50px; cursor:pointer;
+background:url("../images/common/set_bar.png") 0 -400px no-repeat; }
+.gnb_btBannerDeco { display:block; position:absolute; top:11px; left:10px; width:82px; height:32px; background:url('../images/common/set_bar.png') 0 -500px no-repeat; }
+
+
+.gnbBanner { position:absolute; top:0; left:0; min-width:1000px;
+background-color:rgb(58, 58, 131); width:100%; height:170px;}
+.gnbBannerWrap { position:relative; width:1000px; margin:0 auto; height:170px; }
+.gnb_bannerList {position:relative; width:100%; height:170px;
+ }
+ .gnb_bannerList li { position:relative; height:170px; }
+.gnb_banner_item1 {background:rgb(58, 58, 131)url("../images/common/3_CYPERS_171026.png") 0 0 repeat-x;
+
+} 
+.gnb_banner_item2 { display:none; background:rgb(58, 58, 131)url("../images/common/bg_16.png") 0 0 repeat-x;
+
+} 
+.gnb_bannerList a {display:block; width:100%; height:170px;}
+
+
+.banner_left { position:absolute; top:0; left:0;}
+.banner_right { position:absolute; top:0; right:0;}
+
+.gnb_banner_nav { position:absolute; top:144px; left:0; width:100%; text-align:center; }
+.gnb_banner_nav .gnb_bannerNav_list { display:inline-block; width:28px; height:22px;
+background:url("../images/common/bt_banner.png") no-repeat 8px -95px; text-indent:-5000px; }
+
+.gnb_banner_btn a { display:block; width:28px; height:43px; top:52px;
+background:url("../images/common/bt_banner.png") no-repeat 0 0; text-indent:-5000px; }
+.gnb_banner_btn .gnb_banner_prev { position:absolute; left:-36px;}
+.gnb_banner_btn .gnb_banner_next { position:absolute; right:-36px; 
+background-position:-50px 0; }
+
+.gnb_banner_btn .gnb_banner_list { position:absolute; top:24px; left:19px;
+width:98px; height:98px;
+background:url("../images/common/bt_pcbang.png") 0 0 no-repeat; }
+
+
+
+/* 테라 헤더 시작 */
+#wrap { position:relative;  min-width:1000px; }
+
+#header { position:absolute; top:0; left:0; width:100%; height:90px;
+min-width:1000px; background:url("../images/common/bg_gnb_main.png"); z-index:100; }
+#header .nav { position:relative; width:1000px; height:100%; margin:0 auto; }
+.logo { position:absolute; top:14px; left:10px;}
+.main_logo { display:block; width:169px; height:63px; text-indent:-5000px; 
+background:url("../images/common/bg_logo.png") no-repeat 0 0;}
+
+.gnb_depth1 { position:absolute; left:195px; top:6px; width:902px; height:100%; }
+.gnb_depth1 .menu { float:left; width:150px; height:100%; text-indent:-5000px; }
+.menu h3 a { display:block; height:55px; position:relative;
+background:url("../images/common/txt_gnb_sub_171024.png") 0 0 no-repeat;}
+
+.m1 h3 a { background-position:0 0;}
+.m2 h3 a { background-position:-150px 0;}
+.m3 h3 a { background-position:-300px 0;}
+.m4 h3 a { background-position:-450px 0;}
+.m5 h3 a { background-position:-750px 0;}
+.m6 h3 a { background-position:-600px 0;}
+
+.gnb_depth2 li a { display:block; text-indent:-5000px; height:20px;
+background:url("../images/common/txt_gnb_sub_171024.png") no-repeat 0 0; }
+
+
+/* 포토샵에서 색깔 바꿔야함 */
+
+/* 새소식 */
+
+.m1 .gnb_depth2 .subm1 a {background-position:0 -55px; }
+.m1 .gnb_depth2 .subm2 a {background-position:0 -75px; }
+.m1 .gnb_depth2 .subm3 a {background-position:0 -95px; }
+.m1 .gnb_depth2 .subm4 a {background-position:0 -115px; }
+.m1 .gnb_depth2 .subm5 a {background-position:0 -135px; }
+
+.m1 .gnb_depth2 .subm1 a:hover {background-position:-900px -55px; }
+.m1 .gnb_depth2 .subm2 a:hover {background-position:-900px -75px; }
+.m1 .gnb_depth2 .subm3 a:hover {background-position:-900px -95px; }
+.m1 .gnb_depth2 .subm4 a:hover {background-position:-900px -115px; }
+.m1 .gnb_depth2 .subm5 a:hover {background-position:-900px -135px; }
+
+/* 테라월드 */
+
+.m2 .gnb_depth2 .subm1 a {background-position:-150px -55px; }
+.m2 .gnb_depth2 .subm2 a {background-position:-150px -75px; }
+.m2 .gnb_depth2 .subm3 a {background-position:-150px -95px; }
+.m2 .gnb_depth2 .subm4 a {background-position:-150px -115px; }
+.m2 .gnb_depth2 .subm5 a {background-position:-150px -135px; }
+.m2 .gnb_depth2 .subm6 a {background-position:-150px -155px; }
+
+.m2 .gnb_depth2 .subm1 a:hover {background-position:-1050px -55px; }
+.m2 .gnb_depth2 .subm2 a:hover {background-position:-1050px -75px; }
+.m2 .gnb_depth2 .subm3 a:hover {background-position:-1050px -95px; }
+.m2 .gnb_depth2 .subm4 a:hover {background-position:-1050px -115px; }
+.m2 .gnb_depth2 .subm5 a:hover {background-position:-1050px -135px; }
+.m2 .gnb_depth2 .subm6 a:hover {background-position:-1050px -155px; }
+
+
+/* 커뮤니티 */
+
+.m3 .gnb_depth2 .subm1 a {background-position:-300px -55px; }
+.m3 .gnb_depth2 .subm2 a {background-position:-300px -75px; }
+.m3 .gnb_depth2 .subm3 a {background-position:-300px -95px; }
+.m3 .gnb_depth2 .subm4 a {background-position:-300px -115px; }
+.m3 .gnb_depth2 .subm5 a {background-position:-300px -135px; }
+.m3 .gnb_depth2 .subm6 a {background-position:-300px -155px; }
+
+.m3 .gnb_depth2 .subm1 a:hover {background-position:-1200px -55px; }
+.m3 .gnb_depth2 .subm2 a:hover {background-position:-1200px -75px; }
+.m3 .gnb_depth2 .subm3 a:hover {background-position:-1200px -95px; }
+.m3 .gnb_depth2 .subm4 a:hover {background-position:-1200px -115px; }
+.m3 .gnb_depth2 .subm5 a:hover {background-position:-1200px -135px; }
+.m3 .gnb_depth2 .subm6 a:hover {background-position:-1200px -155px; }
+
+
+/* 자료실 */
+
+.m4 .gnb_depth2 .subm1 a {background-position:-450px -55px; }
+.m4 .gnb_depth2 .subm2 a {background-position:-450px -75px; }
+.m4 .gnb_depth2 .subm3 a {background-position:-450px -95px; }
+
+
+.m4 .gnb_depth2 .subm1 a:hover {background-position:-1350px -55px; }
+.m4 .gnb_depth2 .subm2 a:hover {background-position:-1350px -75px; }
+.m4 .gnb_depth2 .subm3 a:hover {background-position:-1350px -95px; }
+
+
+
+/* 고객지원 */
+
+.m5 .gnb_depth2 .subm1 a {background-position:-750px -55px; }
+.m5 .gnb_depth2 .subm2 a {background-position:-750px -75px; }
+.m5 .gnb_depth2 .subm3 a {background-position:-750px -95px; }
+
+.m5 .gnb_depth2 .subm1 a:hover {background-position:-1650px -55px; }
+.m5 .gnb_depth2 .subm2 a:hover {background-position:-1650px -75px; }
+.m5 .gnb_depth2 .subm3 a:hover {background-position:-1650px -95px; }
+
+.gnb_depth2 { display:none; padding-top:6px;  }
+

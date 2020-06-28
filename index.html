@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>TERA테라</title>
+<link rel="stylesheet" type="text/css" href="style/common.css" />
+<link rel="stylesheet" type="text/css" href="style/index.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+			//넥슨 상단바 
+			$(".gnbBanner").hide();
+			var gnb_po = $("#gnb_btBanner_area");
+			$(".gnb_btBanner").click(function(e){
+				e.preventDefault();
+				if ( gnb_po.hasClass("show") == false )
+				{
+				$("#gnb_btBanner_area").addClass("show");
+				$("#gnb_btBanner_area").attr("title","닫기");
+				$("#gnb_btBanner_area").css("background-position","0 -300px")
+				$(".gnb_btBannerDeco").animate({left:53},400);
+				$("#gnb_wrap").css("padding-top","170px");		
+				$(".gnbBanner").show();		
+				}
+
+				else
+				{
+				$("#gnb_btBanner_area").removeClass("show");
+				$("#gnb_btBanner_area").attr("title","열기");
+				$("#gnb_btBanner_area").css("background-position","0 -400px")
+				$(".gnb_btBannerDeco").animate({left:10},400);
+				$("#gnb_wrap").css("padding-top","0")
+				$(".gnbBanner").hide();	
+				}		
+			});
+			//넥슨 상단바 끝
+			
+			$(".nav").hover(function(){
+				$("#header").stop().animate({height:200},400);
+				$(".gnb_depth2").show();
+				
+			},function(){
+				$("#header").stop().animate({height:90},400);
+				$(".gnb_depth2").hide();
+			});
+			
+			var currentEl, nextEl;
+			currentEl = 0;
+			/*
+			$(".main_banner li").click(function(e){
+				e.preventDefault();
+				nextEl = $(this).index();
+
+			
+					if ( nextEl > currentEl)
+					{
+					$(".main_banner li").eq(currentEl).stop().animate({left:"50%"},600,function(){
+						$(this).addClass("c_over");
+					})		
+					$(".main_banner li").eq(nextEl).css("left","100%").stop().animate({left:"50%"},600)
+					}
+					else
+					{
+					$(".main_banner li").eq(currentEl).stop().animate({left:"50%"},600)		
+					$(".main_banner li").eq(nextEl).css("left","50%").stop().animate({left:"50%"},600)
+					}
+			
+				currentEl = nextEl;
+			})
+		*/
+
+		/*
+		$(".main_banner li").click(function(e){
+			e.preventDefault();
+			//currentEl = $(this).index();
+			//nextEl = $(this).index();
+			
+			$(this).eq(currentEl).stop().animate({left:"50%",width:1000, margin:"0 -500px"},600,function(){
+				$(this).siblings().eq(currentEl-1).animate({left:"50%",width:147, margin:"0 -500px"})
+			})
+			
+			nextEl = currentEl+1;
+		});
+		*/
+		/* 소식 */
+		var wordlist_auto;
+		var num = 0;
+		function wordlist(){
+			$(".list_rolling li:first").slideUp(function(){
+				$(this).appendTo($(".list_rolling")).show();})
+		}
+		setInterval(function(){ wordlist()},3000)
+		
+		$(".wrap_livekeyword").mouseenter(function(){
+			$(".wrap_livekeyword_list").stop().animate({height:"100%"},400)	
+		});
+		$(".wrap_livekeyword_list").mouseleave(function(){
+			$(".wrap_livekeyword_list").stop().animate({height:0},150)		
+		});
+	
+
+		
+			
+});
+
+</script>
+</head>
+
+<body>
+<!-- nexon 상단바 -->
+<div id="gnb_wrap">
+	<div class="gnb_bar">
+		<h1 class="gnb_logo">
+			<a href="http://www.nexon.com">
+				<span class="screen_out">NEXON</span>
+			</a>
+		</h1>
+		<div class="gnb_allMenu">
+			<h2>
+				<a href="">
+					<span class="screen_out">전체메뉴</span>
+				</a>
+			</h2>
+		</div><!-- gnb_allMenu end -->
+		<div class="gnb_info">
+			<span class="gnb_login gnb_buttonDeco"><a href=""><strong>로그인</strong></a></span>
+			<span class="gnb_join gnb_buttonDeco"><a href=""><strong>회원가입</strong></a></span>
+		</div><!-- gnb_info end -->
+		<div class="gnb_btBanner">
+			<a href="" id="gnb_btBanner_area" title="열기">
+			<span class="screen_out">NX혜택</span>
+			<span class="gnb_btBannerDeco">				
+			</span>
+			</a>
+		</div><!-- gnb_btBanner end -->	
+	</div><!-- gnb_bar end -->
+		<div class="gnbBanner">
+			<div class="gnbBannerWrap">
+				<ul class="gnb_bannerList">
+					<li class="gnb_banner_item1">
+						<a href="">
+							<img src="images/common/4_CYPERS_171026.png" width="980" alt="사이퍼즈 이벤트"/>
+							<img src="images/common/1_CYPERS_171026.png" class="banner_left" alt=""/>
+							<img src="images/common/2_CYPERS_171026.png" class="banner_right" alt=""/>
+						</a>
+					</li>
+					<li class="gnb_banner_item2">
+						<img src="images/common/img_16.png" width="980" alt="이벤트"/>
+						<img src="images/common/left_16.png" class="banner_left" alt=""/>
+						<img src="images/common/right_16.png" class="banner_right" alt=""/>
+					</li>
+				</ul>
+				<div class="gnb_banner_nav">
+					<a href="" class="gnb_bannerNav_list">0</a>
+					<a href="" class="gnb_bannerNav_list">1</a>
+				</div>
+				<div class="gnb_banner_btn">
+					<a href="" class="gnb_banner_prev">prev</a>
+					<a href="" class="gnb_banner_next">next</a>
+					<a href="" class="gnb_banner_list">list</a>
+				</div>
+			</div>
+		</div><!-- gnbBanner end -->
+</div><!-- gnb_wrap end -->
+<!-- nexon 상단바 끝 -->
+<div id="wrap">
+<div id="header">
+	<div class="nav close">
+		<h2 class="logo">
+			<a href="" class="main_logo">
+				TERA
+			</a>
+		</h2>
+		<ul class="gnb_depth1">
+			<li class="m1 menu">
+				<h3>
+					<a href="">새소식</a>
+				</h3>
+				<ul class="gnb_depth2">
+					<li class="subm1"><a href="">공지사항</a></li>
+					<li class="subm2"><a href="">업데이트</a></li>
+					<li class="subm3"><a href="">이벤트</a></li>
+					<li class="subm4"><a href="">GM노트</a></li>
+					<li class="subm5"><a href="">개발자노트</a></li>
+				</ul>
+			</li>
+			<li class="m2 menu">
+				<h3>
+					<a href="">테라월드</a>
+				</h3>
+				<ul class="gnb_depth2">
+					<li class="subm1"><a href="">세계관</a></li>
+					<li class="subm2"><a href="">아르보레아의 땅들</a></li>
+					<li class="subm3"><a href="">종족</a></li>
+					<li class="subm4"><a href="">직업</a></li>
+					<li class="subm5"><a href="">플레이팁</a></li>
+					<li class="subm6"><a href="">장비 성장 시스템 개선</a></li>
+				</ul>
+			</li>
+			<li class="m3 menu">
+				<h3>
+					<a href="">커뮤니티</a>
+				</h3>
+				<ul class="gnb_depth2">
+					<li class="subm1"><a href="">자유게시판</a></li>
+					<li class="subm2"><a href="">건의게시판</a></li>
+					<li class="subm3"><a href="">팬아트게시판</a></li>
+					<li class="subm4"><a href="">스크린샷</a></li>
+					<li class="subm5"><a href="">공략게시판</a></li>
+					<li class="subm6"><a href="">테라TV</a></li>
+				</ul>
+			</li>
+			<li class="m4 menu">
+				<h3>
+					<a href="">자료실</a>
+				</h3>
+				<ul class="gnb_depth2">
+					<li class="subm1"><a href="">다운로드</a></li>
+					<li class="subm2"><a href="">멀티미디어</a></li>
+					<li class="subm3"><a href="">팬사이트킷</a></li>			
+				</ul>
+			</li>
+			<li class="m5 menu">
+				<h3>
+					<a href="">고객지원</a>
+				</h3>
+				<ul class="gnb_depth2">
+					<li class="subm1"><a href="">FAQ</a></li>
+					<li class="subm2"><a href="">보안센터</a></li>
+					<li class="subm3"><a href="">게임 서비스 정책</a></li>			
+				</ul>
+			</li>
+			<li class="m6 menu">
+				<h3>
+					<a href="">SHOP</a>
+				</h3>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="container">
+	<div class="main_top">
+		<div class="main_banner">
+			<ul>
+				<li class="list_m1">
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>
+				</li>
+				<li class="list_m2">
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>
+				</li>
+				<li class="list_m3">
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>				
+				</li>
+				<li class="list_m4">
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>
+				</li>
+				<li class="list_m5"> 
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>
+				</li>
+				<li class="list_m6">
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>
+				</li>
+				<li class="list_m7">
+					<a href="">
+						<div class="event_wrap">
+							
+						</div>	
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- main_top end -->
+	<div class="content">
+		<div class="inner_section1">
+			<div class="notice_box">
+				<div class="news_area">
+					<h3><a href="">소식</a></h3>
+					<div class="boxContent">
+						<ul>
+							<li>
+								<a href="">키보드 보안 솔루션 서비스 종료될 예정으로 안내 드립니다.
+								</a>
+							</li>
+							<li>
+								<a href="">
+									10/26(목) 점검연장 보상 안내
+								</a>
+							</li>
+							<li>
+								<a href="">
+									[완료]10/26(목) 정기점검 안내(03:00~12:20)(총 9시간 20분)
+								</a>
+							</li>
+							<li>
+								<a href="">
+									게임이용제한 조치 내역 안내(10/09~10/22)
+								</a>
+							</li>
+							<li>
+								<a href="">
+									(네이버) 드래곤 마스터 박스 프로모션 보상 지급 연기 안내
+								</a>
+							</li>							
+						</ul>
+					</div><!-- boxContent end -->
+					</div>
+					<div class="live_keyword">
+						<div class="wrap_livekeyword">
+							<ol class="list_rolling">
+								<li class="num1">
+									<span class="num">1</span>
+									<a href="">선단</a>
+									<span class="mark_up">3</span>
+								</li>
+								<li class="num2">
+									<span class="num">2</span>
+									<a href="">비공패</a>
+									<span class="mark_up">4</span>
+								</li>
+									<li class="num3">
+									<span class="num">3</span>
+									<a href="">신규 가이드</a>
+									<span class="mark_up">10</span>
+								</li>
+									<li class="num4">
+									<span class="num">4</span>
+									<a href="">천강혼</a>
+									<span class="mark_up">2</span>
+								</li>
+									<li class="num5">
+									<span class="num">5</span>
+									<a href="">각성 만월령</a>
+									<span class="mark_up">4</span>
+								</li>
+									<li class="num6">
+									<span class="num">6</span>
+									<a href="">진 만월령</a>
+									<span class="mark_up">2</span>
+								</li>
+									<li class="num7">
+									<span class="num">7</span>
+									<a href="">제왕 장갑</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num8">
+									<span class="num">8</span>
+									<a href="">투신혼</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num9">
+									<span class="num">9</span>
+									<a href="">혼성장 트리</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num10">
+									<span class="num">10</span>
+									<a href="">혼</a>
+									<span class="mark_up"></span>				
+							</ol>
+						</div><!-- wrap_livekeyword end -->
+
+
+						<div class="wrap_livekeyword_list">
+							<h4>인기검색어</h4>
+							<ol>
+								<li class="num1">
+									<span class="num">1</span>
+									<a href="">선단</a>
+									<span class="mark_up"></span>
+								</li>
+								<li class="num2">
+									<span class="num">2</span>
+									<a href="">비공패</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num3">
+									<span class="num">3</span>
+									<a href="">신규 가이드</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num4">
+									<span class="num">4</span>
+									<a href="">천강혼</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num5">
+									<span class="num">5</span>
+									<a href="">각성 만월령</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num6">
+									<span class="num">6</span>
+									<a href="">진 만월령</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num7">
+									<span class="num">7</span>
+									<a href="">제왕 장갑</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num8">
+									<span class="num">8</span>
+									<a href="">투신혼</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num9">
+									<span class="num">9</span>
+									<a href="">혼성장 트리</a>
+									<span class="mark_up"></span>
+								</li>
+									<li class="num10">
+									<span class="num">10</span>
+									<a href="">혼</a>
+									<span class="mark_up"></span>			
+							</ol>
+						</div>	
+						
+				</div> <!-- wrap_livekeyword end -->		
+				<span class="more"><a href=""></a></span>
+			</div>
+			<div class="firstGo_area">
+				<div class="first_inner">
+					<h3>테라에 <strong>처음</strong><br />오셨나요?</h3>
+					<p>신입에게 주어지는<br />든든한 혜택을 확인하세요!</p>
+					<span class="new_up"></span>
+					<span class="link_btn"></span>
+				</div>
+			</div><!-- firstGo_area end -->
+			<div class="side_area"></div>
+			<div class="login_area"></div><!-- login_area end -->
+		</div><!-- inner_section1 end -->
+		<div></div>
+	</div><!-- content end -->
+</div><!-- container end -->
+<div id="footer"></div><!-- footer end -->
+</div><!-- wrap end -->
+</body>
+</html>
